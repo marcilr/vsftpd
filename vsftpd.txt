@@ -30,6 +30,9 @@ Configuration:
     vsftpd.conf
     vsftpd_conf_migrate.sh
 
+Logs:
+  /var/log/vsftpd.log
+
 
 Does vsftpd support plain FTP?
 ==============================
