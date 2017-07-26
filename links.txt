@@ -1,0 +1,12 @@
+links.txt
+Created Wed Jul 26 10:37:32 AKDT 2017
+Copyright (C) 2017 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+vsftpd related links
+
+
+Links
+=====
+Does vsftpd support plain FTP?
+https://unix.stackexchange.com/questions/140740/does-vsftpd-support-plain-ftp
