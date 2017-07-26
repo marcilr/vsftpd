@@ -1,0 +1,83 @@
+vsftpd.txt
+Created Wed Jul 26 10:27:57 AKDT 2017
+Copyright (C) 2017 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+vsftpd - Very Secure FTP Daemon
+           or
+         Very Secure File Transport Protocol Daemon
+
+
+DESCRIPTION
+     vsftpd is the Very Secure File Transfer Protocol Daemon. The server can
+     be launched via a “super-server” such as inetd(8) or xinetd(8).  Alterna-
+     tively, vsftpd can be launched in standalone mode, in which case vsftpd
+     itself will listen on the network. This latter mode is easier to use, and
+     recommended. It is activated by setting listen=YES in
+     /etc/vsftpd/vsftpd.conf.  Direct execution of the vsftpd binary will then
+     launch the FTP service ready for immediate client connections.
+
+OPTIONS
+     An optional [configuration file] may be given on the command line. This
+     configuration file has to be owned by root. The default configuration
+     file is /etc/vsftpd/vsftpd.conf.
+
+Configuration:
+  /etc/vsftpd/
+    chroot_list
+    ftpusers
+    user_list
+    vsftpd.conf
+    vsftpd_conf_migrate.sh
+
+
+Does vsftpd support plain FTP?
+==============================
+In spite of its name it supports FTP.  The name VSFTPD stands for
+"Very Secure File Transport Protocol Daemon".
+
+abstract
+--------
+The FTP (File Transfer Protocol) is used as one of the most common
+means of copying files between computers over the Internet.  Most
+web based download sites use the built in FTP capabilities of web
+browsers and therefore most server oriented operating systems
+usually include an FTP server application as part of the software
+suite. Linux is no exception.  With this page I will show how to
+convert a DebianGNU/Linux box into an FTP server using the vsftpd
+(Very Secure FTP Daemon) package which is included with the
+standard Debian distribution i.e. no need to compile anything
+ourselves which saves time and makes things work even for the
+inexperienced users.
+
+Source: http://www.markus-gattol.name/ws/vsftpd.html
+
+There are many tutorials, such as this one titled: How To
+Configure vsftpd to Use SSL/TLS on an Ubuntu VPS that show how
+to setup regular FTP service using vsftpd. The first section
+describes the steps.
+
+After editing the config file: sudo nano /etc/vsftpd.conf:
+
+anonymous_enable=NO
+local_enable=YES
+write_enable=YES
+chroot_local_user=YES
+Then add a ftp user:
+
+$ sudo adduser ftpuser
+Then create their home directory:
+
+$ sudo chown root:root /home/ftpuser
+And create directories for them to upload/download to within:
+
+$ sudo mkdir /home/ftpuser/files
+$ sudo chown ftpuser:ftpuser /home/ftpuser/files
+
+--/unix.stackexchange.com/questions/140740/does-vsftpd-support-plain-ftp
+
+
+Links
+=====
+Does vsftpd support plain FTP?
+https://unix.stackexchange.com/questions/140740/does-vsftpd-support-plain-ftp
