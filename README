@@ -1,0 +1,21 @@
+README
+Created Wed Jul 26 10:37:09 AKDT 2017
+Copyright (C) 2017 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Filelist
+========
+links.txt
+  vsftpd related links
+
+vsftpd.txt
+  vsftpd - Very Secure FTP Daemon
+
+  vsftpd is the Very Secure File Transfer Protocol Daemon. The server can
+  be launched via a “super-server” such as inetd(8) or xinetd(8).  Alterna-
+  tively, vsftpd can be launched in standalone mode, in which case vsftpd
+  itself will listen on the network. This latter mode is easier to use, and
+  recommended. It is activated by setting listen=YES in
+  /etc/vsftpd/vsftpd.conf.  Direct execution of the vsftpd binary will then
+  launch the FTP service ready for immediate client connections.
+
